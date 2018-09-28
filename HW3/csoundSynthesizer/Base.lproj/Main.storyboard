@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="csoundSynthesizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Ef-OC-HUJ">
+                                <rect key="frame" x="302" y="416" width="477" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258506710523" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="levelChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="JHV-B4-TZ5"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ak-Km-FBe">
+                                <rect key="frame" x="859" y="20" width="145" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7o2-kW-6IG"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="csound.github.io">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="Menlo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="showSite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aQi-ly-sWh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7l-rd-tcj" customClass="CsoundVirtualKeyboard" customModule="csoundSynthesizer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="547" width="1024" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZC-lp-sjQ">
+                                        <rect key="frame" x="447" y="100" width="130.5" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="KeyboardView">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XqD-0A-uMc">
+                                <rect key="frame" x="174" y="16" width="693" height="162"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvF-ZF-elB">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="162"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EvF-ZF-elB" secondAttribute="height" multiplier="1:1" id="6kE-yJ-49E"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="NnO-kA-99M"/>
+                                        </constraints>
+                                        <state key="normal" title="Sqr" image="SQROFF"/>
+                                        <state key="selected" image="SQR"/>
+                                        <connections>
+                                            <action selector="didSelectSigtype:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42J-nh-jrA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXX-tz-rCo">
+                                        <rect key="frame" x="177" y="0.0" width="162" height="162"/>
+                                        <state key="normal" title="Sin" image="SINOFF"/>
+                                        <state key="selected" image="SIN"/>
+                                        <connections>
+                                            <action selector="didSelectSigtype:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRz-7p-DEc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhs-oZ-Fhn">
+                                        <rect key="frame" x="354" y="0.0" width="162" height="162"/>
+                                        <state key="normal" title="Tri" image="TRIOFF"/>
+                                        <state key="selected" image="TRI"/>
+                                        <connections>
+                                            <action selector="didSelectSigtype:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3GH-oY-8Bb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LA-u0-o7p">
+                                        <rect key="frame" x="531" y="17" width="162" height="128"/>
+                                        <state key="normal" title="Saw" image="SAWOFF"/>
+                                        <state key="selected" image="SAW"/>
+                                        <connections>
+                                            <action selector="didSelectSigtype:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oaV-d1-k9i"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lhs-oZ-Fhn" firstAttribute="width" secondItem="EvF-ZF-elB" secondAttribute="width" id="AZ5-b2-bYn"/>
+                                    <constraint firstItem="pXX-tz-rCo" firstAttribute="height" secondItem="EvF-ZF-elB" secondAttribute="height" id="cdG-Jx-GgD"/>
+                                    <constraint firstItem="pXX-tz-rCo" firstAttribute="width" secondItem="EvF-ZF-elB" secondAttribute="width" id="vcN-yU-H22"/>
+                                    <constraint firstItem="Lhs-oZ-Fhn" firstAttribute="height" secondItem="EvF-ZF-elB" secondAttribute="height" id="yWm-e5-yhi"/>
+                                </constraints>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.44" minValue="0.0" maxValue="0.94999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-Yk-1qY">
+                                <rect key="frame" x="302" y="337" width="477" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="fbChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="PG6-Jj-jee"/>
+                                    <action selector="levelChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nlf-Xd-rhd"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reverb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="327-Iz-yzE">
+                                <rect key="frame" x="485" y="375" width="201" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resonance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4Q-hi-38Q" userLabel="ResoLab">
+                                <rect key="frame" x="471" y="223" width="228" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8000" minValue="20" maxValue="16000" translatesAutoresizingMaskIntoConstraints="NO" id="VNF-Ot-uqv" userLabel="Cutoff">
+                                <rect key="frame" x="302" y="259" width="477" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="frqChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="F3X-Hb-RKL"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Pass Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9li-37-MBE" userLabel="frqLab">
+                                <rect key="frame" x="471" y="296" width="228" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.44" minValue="0.0" maxValue="0.94999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vlu-kf-JEW" userLabel="Resonance">
+                                <rect key="frame" x="302" y="186" width="477" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="resChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="au8-zu-xz4"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAH-Cj-aPs">
+                                <rect key="frame" x="487" y="454" width="67" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Level">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Ak-Km-FBe" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="e6l-m5-ro6"/>
+                            <constraint firstItem="XqD-0A-uMc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fas-EK-eQx"/>
+                            <constraint firstItem="7Ak-Km-FBe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="ran-vH-bq0"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="fbLabel" destination="327-Iz-yzE" id="1gU-sA-4pj"/>
+                        <outlet property="fbSlider" destination="5IB-Yk-1qY" id="zGV-jB-E2M"/>
+                        <outlet property="frqLabel" destination="9li-37-MBE" id="lIp-yR-YyW"/>
+                        <outlet property="frqSlider" destination="VNF-Ot-uqv" id="Ddw-bH-mRa"/>
+                        <outlet property="keyboardView" destination="a7l-rd-tcj" id="mV6-5s-ewi"/>
+                        <outlet property="levelSlider" destination="1Ef-OC-HUJ" id="FrG-If-Xul"/>
+                        <outlet property="resLabel" destination="L4Q-hi-38Q" id="fZW-e0-9pm"/>
+                        <outlet property="resSlider" destination="vlu-kf-JEW" id="XKj-R3-9ed"/>
+                        <outlet property="sawButton" destination="2LA-u0-o7p" id="lmM-8R-5rn"/>
+                        <outlet property="sinButton" destination="pXX-tz-rCo" id="iAi-Jp-aXQ"/>
+                        <outlet property="sqrButton" destination="EvF-ZF-elB" id="0Sf-mb-C6t"/>
+                        <outlet property="triButton" destination="Lhs-oZ-Fhn" id="ZND-cF-FfJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114.84374999999999" y="122.65625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SAW" width="128" height="128"/>
+        <image name="SAWOFF" width="128" height="128"/>
+        <image name="SIN" width="128" height="128"/>
+        <image name="SINOFF" width="128" height="128"/>
+        <image name="SQR" width="128" height="128"/>
+        <image name="SQROFF" width="128" height="128"/>
+        <image name="TRI" width="128" height="128"/>
+        <image name="TRIOFF" width="128" height="128"/>
+    </resources>
+</document>
