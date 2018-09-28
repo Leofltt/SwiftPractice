@@ -19,7 +19,7 @@ enum SigType: Int {
 class ViewController: UIViewController {
     
     // Declarations
-    var sig: SigType = .sin
+    var sig: SigType = .saw
     // took out var vol = 0.8 -> USELESS !
     var csound: CsoundObj!
     var csoundUI: CsoundUI!  //comes from the library
