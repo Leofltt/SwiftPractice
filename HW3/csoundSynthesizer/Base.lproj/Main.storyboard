@@ -184,6 +184,29 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe2-nl-g33">
+                                <rect key="frame" x="124" y="241" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OCT UP!"/>
+                                <connections>
+                                    <action selector="changOct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x66-ve-P8E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeW-IY-E2R">
+                                <rect key="frame" x="119" y="337" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OCT DOWN!"/>
+                                <connections>
+                                    <action selector="changOct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2zr-fK-eb5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Octave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-x8-NUQ">
+                                <rect key="frame" x="51" y="416" width="185" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -195,18 +218,21 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="downButton" destination="SeW-IY-E2R" id="N5u-cH-gNj"/>
                         <outlet property="fbLabel" destination="327-Iz-yzE" id="1gU-sA-4pj"/>
                         <outlet property="fbSlider" destination="5IB-Yk-1qY" id="zGV-jB-E2M"/>
                         <outlet property="frqLabel" destination="9li-37-MBE" id="lIp-yR-YyW"/>
                         <outlet property="frqSlider" destination="VNF-Ot-uqv" id="Ddw-bH-mRa"/>
                         <outlet property="keyboardView" destination="a7l-rd-tcj" id="mV6-5s-ewi"/>
                         <outlet property="levelSlider" destination="1Ef-OC-HUJ" id="FrG-If-Xul"/>
+                        <outlet property="octLabel" destination="yX3-x8-NUQ" id="3IP-0M-dK5"/>
                         <outlet property="resLabel" destination="L4Q-hi-38Q" id="fZW-e0-9pm"/>
                         <outlet property="resSlider" destination="vlu-kf-JEW" id="XKj-R3-9ed"/>
                         <outlet property="sawButton" destination="2LA-u0-o7p" id="lmM-8R-5rn"/>
                         <outlet property="sinButton" destination="pXX-tz-rCo" id="iAi-Jp-aXQ"/>
                         <outlet property="sqrButton" destination="EvF-ZF-elB" id="0Sf-mb-C6t"/>
                         <outlet property="triButton" destination="Lhs-oZ-Fhn" id="ZND-cF-FfJ"/>
+                        <outlet property="upButton" destination="Qe2-nl-g33" id="Qsf-Jh-UnE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

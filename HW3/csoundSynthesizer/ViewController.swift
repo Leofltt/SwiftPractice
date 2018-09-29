@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     // Declarations
     var sig: SigType = .saw
+    var octave: Int = 4
     // took out var vol = 0.8 -> USELESS !
     var csound: CsoundObj!
     var csoundUI: CsoundUI!  //comes from the library
@@ -33,9 +34,12 @@ class ViewController: UIViewController {
     @IBOutlet var fbSlider: UISlider!
     @IBOutlet var resSlider: UISlider!
     @IBOutlet var frqSlider: UISlider!
+    @IBOutlet var upButton: UIButton!
+    @IBOutlet var downButton: UIButton!
     @IBOutlet var resLabel: UILabel!
     @IBOutlet var frqLabel: UILabel!
     @IBOutlet var fbLabel: UILabel!
+    @IBOutlet var octLabel: UILabel!
     @IBOutlet var keyboardView: CsoundVirtualKeyboard!
     
     
@@ -113,6 +117,15 @@ class ViewController: UIViewController {
         case triButton: sig = .tri
         default: break
         }
+    
+    }
+    @IBAction func changOct(_ sender:UIButton) {
+        switch sender {
+        case upButton: octave += 1
+        case downButton: octave -= 1
+        default: break
+        }
+        octLabel.text = String(format: "Octave %d",octave)
     }
 }
 
@@ -120,13 +133,13 @@ class ViewController: UIViewController {
 extension ViewController: CsoundVirtualKeyboardDelegate {
     func keyDown(_ keybd: CsoundVirtualKeyboard, keyNum: Int) {
         // Key touched
-        let score = String(format: "i1.%003d 0 -1 %d %d", keyNum+60, keyNum+60, sig.rawValue)
+        let score = String(format: "i1.%003d 0 -1 %d %d", keyNum+(octave*12), keyNum+(octave*12), sig.rawValue)
         csound.sendScore(score)
     }
     
     func keyUp(_ keybd: CsoundVirtualKeyboard, keyNum: Int) {
         // Key released
-        let score = String(format: "i-1.%003d 0 -1 %d %d", keyNum+60, keyNum+60, sig.rawValue)
+        let score = String(format: "i-1.%003d 0 -1 %d %d", keyNum+(octave*12), keyNum+(octave*12), sig.rawValue)
         csound.sendScore(score)
     }
 }
