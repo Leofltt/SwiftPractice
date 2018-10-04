@@ -24,7 +24,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Ef-OC-HUJ">
                                 <rect key="frame" x="302" y="416" width="477" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258506710523" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -119,7 +119,7 @@
                                     <constraint firstItem="Lhs-oZ-Fhn" firstAttribute="height" secondItem="EvF-ZF-elB" secondAttribute="height" id="yWm-e5-yhi"/>
                                 </constraints>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.44" minValue="0.0" maxValue="0.94999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-Yk-1qY">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-Yk-1qY">
                                 <rect key="frame" x="302" y="337" width="477" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -127,7 +127,6 @@
                                 <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="fbChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="PG6-Jj-jee"/>
-                                    <action selector="levelChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nlf-Xd-rhd"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reverb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="327-Iz-yzE">
@@ -144,10 +143,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8000" minValue="20" maxValue="16000" translatesAutoresizingMaskIntoConstraints="NO" id="VNF-Ot-uqv" userLabel="Cutoff">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="9000" minValue="20" maxValue="18000" translatesAutoresizingMaskIntoConstraints="NO" id="VNF-Ot-uqv" userLabel="Cutoff">
                                 <rect key="frame" x="302" y="259" width="477" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -161,7 +160,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.44" minValue="0.0" maxValue="0.94999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vlu-kf-JEW" userLabel="Resonance">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vlu-kf-JEW" userLabel="Resonance">
                                 <rect key="frame" x="302" y="186" width="477" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.038340258510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -171,42 +170,40 @@
                                     <action selector="resChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="au8-zu-xz4"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAH-Cj-aPs">
-                                <rect key="frame" x="487" y="454" width="67" height="26"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe2-nl-g33">
+                                <rect key="frame" x="108" y="200" width="97" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Level">
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="Menlo-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe2-nl-g33">
-                                <rect key="frame" x="124" y="241" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OCT UP!"/>
+                                <state key="normal" image="Up Arrow">
+                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="changOct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x66-ve-P8E"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeW-IY-E2R">
-                                <rect key="frame" x="119" y="337" width="86" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C 5 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd0-cz-6Yz">
+                                <rect key="frame" x="835" y="259" width="133" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OCT DOWN!"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOu-Ph-Fjm">
+                                <rect key="frame" x="485" y="454" width="201" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeW-IY-E2R">
+                                <rect key="frame" x="108" y="337" width="97" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Down Arrow">
+                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="changOct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2zr-fK-eb5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Octave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-x8-NUQ">
-                                <rect key="frame" x="51" y="416" width="185" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -218,14 +215,15 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="OctaveText" destination="sd0-cz-6Yz" id="pdO-xD-E5P"/>
                         <outlet property="downButton" destination="SeW-IY-E2R" id="N5u-cH-gNj"/>
                         <outlet property="fbLabel" destination="327-Iz-yzE" id="1gU-sA-4pj"/>
                         <outlet property="fbSlider" destination="5IB-Yk-1qY" id="zGV-jB-E2M"/>
                         <outlet property="frqLabel" destination="9li-37-MBE" id="lIp-yR-YyW"/>
                         <outlet property="frqSlider" destination="VNF-Ot-uqv" id="Ddw-bH-mRa"/>
                         <outlet property="keyboardView" destination="a7l-rd-tcj" id="mV6-5s-ewi"/>
+                        <outlet property="levelLabel" destination="BOu-Ph-Fjm" id="6gg-LX-n8Y"/>
                         <outlet property="levelSlider" destination="1Ef-OC-HUJ" id="FrG-If-Xul"/>
-                        <outlet property="octLabel" destination="yX3-x8-NUQ" id="3IP-0M-dK5"/>
                         <outlet property="resLabel" destination="L4Q-hi-38Q" id="fZW-e0-9pm"/>
                         <outlet property="resSlider" destination="vlu-kf-JEW" id="XKj-R3-9ed"/>
                         <outlet property="sawButton" destination="2LA-u0-o7p" id="lmM-8R-5rn"/>
@@ -241,6 +239,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Down Arrow" width="900" height="900"/>
         <image name="SAW" width="128" height="128"/>
         <image name="SAWOFF" width="128" height="128"/>
         <image name="SIN" width="128" height="128"/>
@@ -249,5 +248,7 @@
         <image name="SQROFF" width="128" height="128"/>
         <image name="TRI" width="128" height="128"/>
         <image name="TRIOFF" width="128" height="128"/>
+        <image name="Up Arrow" width="900" height="900"/>
     </resources>
+    <color key="tintColor" red="0.38823530080000002" green="0.85490196939999996" blue="0.21960784489999999" alpha="1" colorSpace="deviceRGB"/>
 </document>

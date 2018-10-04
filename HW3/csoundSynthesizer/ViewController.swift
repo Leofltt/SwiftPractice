@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     
     // Declarations
     var sig: SigType = .saw
-    var octave: Int = 4
-    // took out var vol = 0.8 -> USELESS !
+    var sum: Int = 5
+    // took out var vol = 0.8. Defined by default value on slider
     var csound: CsoundObj!
     var csoundUI: CsoundUI!  //comes from the library
     
@@ -30,21 +30,47 @@ class ViewController: UIViewController {
     @IBOutlet var sqrButton: UIButton!
     @IBOutlet var sawButton: UIButton!
     @IBOutlet var triButton: UIButton!
+    
     @IBOutlet var levelSlider: UISlider!
     @IBOutlet var fbSlider: UISlider!
     @IBOutlet var resSlider: UISlider!
     @IBOutlet var frqSlider: UISlider!
+    
     @IBOutlet var upButton: UIButton!
     @IBOutlet var downButton: UIButton!
+    
     @IBOutlet var resLabel: UILabel!
     @IBOutlet var frqLabel: UILabel!
     @IBOutlet var fbLabel: UILabel!
-    @IBOutlet var octLabel: UILabel!
+    @IBOutlet var levelLabel: UILabel!
+    
+    @IBOutlet var OctaveText: UILabel!
+    
     @IBOutlet var keyboardView: CsoundVirtualKeyboard!
+    
+    func incrWG (op: String) {
+        switch op {
+        case "+":
+            guard sum < 8 else {
+                return
+            }
+            sum += 1
+            
+        case "-":
+            guard sum > 1 else {
+                return
+            }
+            sum -= 1
+            
+        default: break
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.lightGray
         
         // Initialize CsoundObj and CsoundUI objects
         csound = CsoundObj()
@@ -70,25 +96,27 @@ class ViewController: UIViewController {
         // Mock level meter with minimum track color of slider
         let color = UIColor(hue: CGFloat(1/3 - (sender.value/3)), saturation: 1, brightness: 1, alpha: 1)
         sender.minimumTrackTintColor = color
+        levelLabel.text = String(format: "Level: %.2f", sender.value)
+        
     }
     
     @IBAction func fbChange(_ sender: UISlider) {
         // Mock fb meter with minimum track color of slider
         let color = UIColor(hue: CGFloat(1/3 - (sender.value/3)), saturation: 1, brightness: 1, alpha: 1)
         sender.minimumTrackTintColor = color
-          fbLabel.text = String(format: "FB: %.2f", sender.value)
+          fbLabel.text = String(format: "FeedBack: %.2f", sender.value)
     }
     @IBAction func resChange(_ sender: UISlider) {
         // Mock fb meter with minimum track color of slider
         let color = UIColor(hue: CGFloat(1/3 - (sender.value/3)), saturation: 1, brightness: 1, alpha: 1)
         sender.minimumTrackTintColor = color
-        resLabel.text = String(format: "Res: %.2f", sender.value)
+        resLabel.text = String(format: "Resonance: %.2f", sender.value)
     }
     @IBAction func frqChange(_ sender: UISlider) {
         // Mock fb meter with minimum track color of slider
         let color = UIColor(hue: CGFloat(1/3 - (sender.value/3)), saturation: 1, brightness: 1, alpha: 1)
         sender.minimumTrackTintColor = color
-        frqLabel.text = String(format: "Cutoff f: %.0f Hz", sender.value)
+        frqLabel.text = String(format: "Cutoff frequency: %.0f Hz", sender.value)
     }
     
     // Show csound.github.io in an SFSafariViewController
@@ -121,25 +149,28 @@ class ViewController: UIViewController {
     }
     @IBAction func changOct(_ sender:UIButton) {
         switch sender {
-        case upButton: octave += 1
-        case downButton: octave -= 1
+        case upButton:
+            incrWG(op: "+")
+        case downButton:
+            incrWG(op: "-")
         default: break
         }
-        octLabel.text = String(format: "Octave %d",octave)
+        OctaveText.text = String(format: "C%2d", sum)
     }
+
 }
 
 // MARK: Keyboard delegate methods
 extension ViewController: CsoundVirtualKeyboardDelegate {
     func keyDown(_ keybd: CsoundVirtualKeyboard, keyNum: Int) {
         // Key touched
-        let score = String(format: "i1.%003d 0 -1 %d %d", keyNum+(octave*12), keyNum+(octave*12), sig.rawValue)
+        let score = String(format: "i1.%003d 0 -1 %d %d", keyNum+(sum*12), keyNum+(sum*12), sig.rawValue)
         csound.sendScore(score)
     }
     
     func keyUp(_ keybd: CsoundVirtualKeyboard, keyNum: Int) {
         // Key released
-        let score = String(format: "i-1.%003d 0 -1 %d %d", keyNum+(octave*12), keyNum+(octave*12), sig.rawValue)
+        let score = String(format: "i-1.%003d 0 -1 %d %d", keyNum+(sum*12), keyNum+(sum*12), sig.rawValue)
         csound.sendScore(score)
     }
 }
