@@ -4,10 +4,6 @@
 </CsOptions>
 <CsInstruments>
 
-/*
-	csoundSynth.csd
-	A simple synthesier.
-*/
 
 sr = 44100
 ksmps = 10
@@ -16,7 +12,7 @@ nchnls = 2
 
 garvb		init		0
 
-maxalloc 1, 8
+maxalloc 1, 6
 
 instr 1
 kamp		chnget	"amp"
@@ -25,7 +21,7 @@ kres        chnget    "resM"
 kamp		port		kamp, .001
 kfrq port kfrq, .001
 kres port kres, .001
-kamp		/=		4
+kamp /= 3
 kenv		linsegr		0, 		 .001, 		1, 	 .01, 	1, 	.1, 0
 asig1		oscil		kenv,		cpsmidinn(p4),		p5
 asig       moogladder    asig1, kfrq, kres

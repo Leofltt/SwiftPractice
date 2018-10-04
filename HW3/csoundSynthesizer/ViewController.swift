@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     // Declarations
     var sig: SigType = .saw
-    var sum: Int = 5
+    var sum: Int = 3
     // took out var vol = 0.8. Defined by default value on slider
     var csound: CsoundObj!
     var csoundUI: CsoundUI!  //comes from the library
@@ -55,13 +55,11 @@ class ViewController: UIViewController {
                 return
             }
             sum += 1
-            
         case "-":
             guard sum > 1 else {
                 return
             }
             sum -= 1
-            
         default: break
         }
     }
@@ -155,7 +153,7 @@ class ViewController: UIViewController {
             incrWG(op: "-")
         default: break
         }
-        OctaveText.text = String(format: "C%2d", sum)
+        OctaveText.text = String(format: "C%d", sum)
     }
 
 }
@@ -174,6 +172,4 @@ extension ViewController: CsoundVirtualKeyboardDelegate {
         csound.sendScore(score)
     }
 }
-// the . notation lets you control the specific instance of instrument you are addressing
-// %003d means print 3 decimal points, the 00 means to not have space
 
