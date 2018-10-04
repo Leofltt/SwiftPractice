@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     
     // Declarations
     var sig: SigType = .saw
-    var sum: Int = 3
-    // took out var vol = 0.8. Defined by default value on slider
+    var sum: Int = 4
+    var vol = 0.8
     var csound: CsoundObj!
     var csoundUI: CsoundUI!  //comes from the library
     
@@ -48,23 +48,23 @@ class ViewController: UIViewController {
     
     @IBOutlet var keyboardView: CsoundVirtualKeyboard!
     
-    func incrWG (op: String) {
+    func incrWith (op: String, num: Int) -> Int {
+        var x = num
         switch op {
         case "+":
-            guard sum < 8 else {
-                return
+            guard x < 8 else {
+                return x
             }
-            sum += 1
+            x += 1
         case "-":
-            guard sum > 1 else {
-                return
+            guard x > 1 else {
+                return x
             }
-            sum -= 1
+            x -= 1
         default: break
         }
+        return x
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -148,9 +148,10 @@ class ViewController: UIViewController {
     @IBAction func changOct(_ sender:UIButton) {
         switch sender {
         case upButton:
-            incrWG(op: "+")
+            sum = incrWith(op: "+",num: sum)
+            
         case downButton:
-            incrWG(op: "-")
+            sum = incrWith(op: "-", num: sum)
         default: break
         }
         OctaveText.text = String(format: "C%d", sum)
