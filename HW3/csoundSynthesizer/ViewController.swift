@@ -48,21 +48,18 @@ class ViewController: UIViewController {
     
     @IBOutlet var keyboardView: CsoundVirtualKeyboard!
     
-    func incrWith (op: String, num: Int) -> Int {
+    func incrWith (op: ((Int,Int)->Int), num: Int) -> Int {
         var x = num
-        switch op {
-        case "+":
-            guard x < 8 else {
-                return x
-            }
-            x += 1
-        case "-":
-            guard x > 1 else {
-                return x
-            }
-            x -= 1
-        default: break
+        guard x >= 1 else {
+            x = 1
+            return x
         }
+        guard x <= 8 else {
+            x = 8
+            return x
+        }
+        x = op(num,1)
+        print(x)
         return x
     }
     override func viewDidLoad() {
@@ -148,10 +145,10 @@ class ViewController: UIViewController {
     @IBAction func changOct(_ sender:UIButton) {
         switch sender {
         case upButton:
-            sum = incrWith(op: "+",num: sum)
+            sum = incrWith(op: +,num: sum)
             
         case downButton:
-            sum = incrWith(op: "-", num: sum)
+            sum = incrWith(op: -, num: sum)
         default: break
         }
         OctaveText.text = String(format: "C%d", sum)
