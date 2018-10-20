@@ -1,4 +1,3 @@
-//
 //  SecondViewController.swift
 //  navProcessor
 //
@@ -25,6 +24,7 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.lightGray
         
         // Initialize pan gesture recognizer and add it to xyPad
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))) //UIPanGestureRecognizer comes with Swift.

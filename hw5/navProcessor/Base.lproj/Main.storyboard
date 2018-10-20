@@ -409,6 +409,8 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.33000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Kq-xf-Pbt" userLabel="fb Slider">
                                 <rect key="frame" x="122" y="221" width="781" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.98522335289999996" green="0.047721708039999998" blue="0.1142929218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="anyValueChanged:" destination="PAw-pE-kbD" eventType="valueChanged" id="5Z7-rw-lG8"/>
                                 </connections>
@@ -416,6 +418,8 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-QU-MnO">
                                 <rect key="frame" x="122" y="98" width="781" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.98522335289999996" green="0.047721708039999998" blue="0.1142929218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="anyValueChanged:" destination="PAw-pE-kbD" eventType="valueChanged" id="CN5-tq-98Z"/>
                                 </connections>
@@ -423,6 +427,8 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="44" minValue="0.0" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="uEL-PI-lgX" userLabel="dur Slider">
                                 <rect key="frame" x="122" y="356" width="781" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.98522335289999996" green="0.047721708039999998" blue="0.1142929218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="anyValueChanged:" destination="PAw-pE-kbD" eventType="valueChanged" id="S6Q-oc-sG0"/>
                                 </connections>
@@ -430,6 +436,8 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="-2" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="Y5d-yf-Tu7" userLabel="pitch Slider">
                                 <rect key="frame" x="122" y="494" width="781" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.98522335289999996" green="0.047721708039999998" blue="0.1142929218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="anyValueChanged:" destination="PAw-pE-kbD" eventType="valueChanged" id="0k7-1G-gbs"/>
                                 </connections>
@@ -472,12 +480,21 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="11" minValue="1" maxValue="88" translatesAutoresizingMaskIntoConstraints="NO" id="PYk-9c-b80" userLabel="rate Slider">
                                 <rect key="frame" x="122" y="619" width="781" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.98522335289999996" green="0.047721708039999998" blue="0.1142929218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="anyValueChanged:" destination="PAw-pE-kbD" eventType="valueChanged" id="saM-Ua-Bx1"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GRANULAR PROCESSOR" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03Z-FF-UFv">
+                                <rect key="frame" x="627" y="689" width="338" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="durSlider" destination="uEL-PI-lgX" id="nSX-sL-SSl"/>

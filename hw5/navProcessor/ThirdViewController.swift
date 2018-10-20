@@ -37,6 +37,7 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         view.backgroundColor = UIColor.lightGray
         
         csound.addBinding(self)
         
