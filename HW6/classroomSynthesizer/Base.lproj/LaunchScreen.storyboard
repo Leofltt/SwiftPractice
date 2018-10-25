@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ9-MR-15A">
+                                <rect key="frame" x="223" y="356" width="578" height="56"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="classroomSynthesizer">
+                                        <attributes>
+                                            <font key="NSFont" size="48" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke8-K9-7oY">
+                                <rect key="frame" x="230.5" y="420" width="564" height="28"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="EP P453: Audio Programming for the iPad">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SYNTH" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-97-TR6">
+                                <rect key="frame" x="392" y="196" width="240" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Key-XO-fQl"/>
+                                    <constraint firstAttribute="height" constant="152" id="cYd-P2-Pj2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99466947699090447" blue="0.93031399744795229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BQ9-MR-15A" firstAttribute="top" secondItem="hvT-97-TR6" secondAttribute="bottom" constant="8" id="7Us-fg-zea"/>
+                            <constraint firstItem="BQ9-MR-15A" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DgV-4q-h3O"/>
+                            <constraint firstItem="Ke8-K9-7oY" firstAttribute="top" secondItem="BQ9-MR-15A" secondAttribute="bottom" constant="8" id="Z7l-ml-wfT"/>
+                            <constraint firstItem="Ke8-K9-7oY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d6a-Em-0VZ"/>
+                            <constraint firstItem="BQ9-MR-15A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tVf-b5-Zep"/>
+                            <constraint firstItem="hvT-97-TR6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wlI-kD-3Bd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.734375" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SYNTH" width="1211" height="1024"/>
+    </resources>
+</document>
+
