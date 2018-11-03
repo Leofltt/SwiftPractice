@@ -1,0 +1,6 @@
+framework module CsoundiOS {
+  umbrella header "CsoundiOS.h"
+
+  export *
+  module * { export * }
+}
