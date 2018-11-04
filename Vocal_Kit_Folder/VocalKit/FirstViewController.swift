@@ -64,9 +64,9 @@ class FirstViewController: UIViewController {
         view.backgroundColor = UIColor.lightGray
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        csound.sendScore("i-1 0 1")
-        csound.sendScore("i-100 0 1")
+    override func viewDidAppear(_ animated: Bool){
+        csound.sendScore("i-2 0 1")
+        csound.sendScore("i-101 0 1")
     }
     
     @IBAction func OnOff(_ sender:UISwitch){

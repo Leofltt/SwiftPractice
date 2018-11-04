@@ -11,14 +11,16 @@ import CsoundiOS
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet var keyboard: CsoundVirtualKeyboard!
 
     @IBOutlet var reverbSlider: UISlider!
     @IBOutlet var volumeSlider: UISlider!
-    @IBOutlet var volValue: UILabel!
+    @IBOutlet var compSlider: UISlider!
     
-    // Declarations
-    var loop = true
+    @IBOutlet var volValue: UILabel!
+    @IBOutlet var verbValue: UILabel!
+    @IBOutlet var compValue: UILabel!
+    
+    @IBOutlet var OnOffSwitch: UISwitch!
     
     //Pointers
     var reverbPtr: UnsafeMutablePointer<Float>?
@@ -30,17 +32,42 @@ class SecondViewController: UIViewController {
     let csound = SharedInstances.csound
     var csoundUI: CsoundUI!
     
+    var verb: Float = 0
+    var volume: Float = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.black
+        
+        csoundUI = CsoundUI(csoundObj: csound)
         csound.addBinding(self)
         
-        csound.play(Bundle.main.path(forResource:"VocalHarmonizer", ofType: "csd")) 
+        csound.useAudioInput = true
+        
+        csound.play(Bundle.main.path(forResource:"VocalHarmonizer", ofType: "csd"))
+        
         
         [volumeSlider, reverbSlider].forEach { ValueChanged($0) }
         
         volumeSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
-        
+        reverbSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
+        compSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        csound.sendScore("i-1 0 1")
+        csound.sendScore("i-100 0 1")
+    }
+    
+    @IBAction func OnOff1(_ sender: UISwitch){
+        if OnOffSwitch.isOn == false {
+            csound.sendScore("i-2 0 1")
+            csound.sendScore("i-101 0 1")
+        }else{
+            csound.sendScore("i2 0 -1")
+            csound.sendScore("i101 0 -1")
+        }
     }
     
     @IBAction func ValueChanged(_ sender: UISlider){
@@ -53,40 +80,15 @@ class SecondViewController: UIViewController {
     }
 }
 
-// Get 1 or 0 from Bool
-extension Bool {
-    func toInt() -> Int {
-        return (self == true) ? 1 : 0
-    }
-}
-
 extension SecondViewController: CsoundBinding{
     func setup(_ csoundObj: CsoundObj) {
-        reverbPtr = csoundObj.getInputChannelPtr("reverb", channelType: CSOUND_CONTROL_CHANNEL)
-        levelPtr = csoundObj.getInputChannelPtr("level", channelType: CSOUND_CONTROL_CHANNEL)
+        reverbPtr = csoundObj.getInputChannelPtr("reverb1", channelType: CSOUND_CONTROL_CHANNEL)
+        levelPtr = csoundObj.getInputChannelPtr("gain", channelType: CSOUND_CONTROL_CHANNEL)
     }
     
     func updateValuesToCsound() {
         reverbPtr?.pointee = reverb
         levelPtr?.pointee = level
-    }
-}
-
-extension SecondViewController: CsoundVirtualKeyboardDelegate {
-    func keyUp(_ keybd: CsoundVirtualKeyboard, keyNum: Int) {
-        let score = String(format: "i-2.%.3d 0 1 %d %d", keyNum, keyNum + 60, loop.toInt())
-        csound.sendScore(score)
-    }
-
-    func keyDown(_ keybd: CsoundVirtualKeyboard, keyNum: Int) {
-        let score = String(format: "i2.%.3d 0 -1 %d %d", keyNum, keyNum + 60, loop.toInt())
-        csound.sendScore(score)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "keyboard" {
-            (segue.destination.view as? CsoundVirtualKeyboard)?.keyboardDelegate = self
-        }
     }
 }
 
