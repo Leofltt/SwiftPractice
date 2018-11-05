@@ -313,6 +313,13 @@
                                     <action selector="stopRecording:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="V8O-5T-aRp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-kI-wZd">
+                                <rect key="frame" x="396" y="534" width="250" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
@@ -326,6 +333,7 @@
                         <outlet property="compSlider" destination="mZb-Hp-ebg" id="vKr-Xq-lTl"/>
                         <outlet property="compValue" destination="0xN-f2-P4w" id="ZNz-rd-q17"/>
                         <outlet property="reverbSlider" destination="SQw-AE-bpQ" id="fac-Ka-fZp"/>
+                        <outlet property="statusLabel" destination="Z7I-kI-wZd" id="lkL-cK-RvG"/>
                         <outlet property="verbValue" destination="p6Y-8M-Qkd" id="03g-B1-xpC"/>
                         <outlet property="volValue" destination="wOI-rD-834" id="CvH-mm-1QL"/>
                         <outlet property="volumeSlider" destination="o65-v8-AIS" id="VHX-7g-8EE"/>

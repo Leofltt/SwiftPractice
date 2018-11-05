@@ -23,6 +23,8 @@ class SecondViewController: UIViewController {
     
     @IBOutlet var OnOffSwitch: UISwitch!
     
+    @IBOutlet var statusLabel: UILabel!
+    
     //Buttons
     @IBOutlet var RecordButton: UIButton!
     @IBOutlet var PlayButton: UIButton!
@@ -55,6 +57,7 @@ class SecondViewController: UIViewController {
         csound.useAudioInput = true
         
         csound.play(Bundle.main.path(forResource:"VocalHarmonizer", ofType: "csd"))
+        
         
         [volumeSlider, reverbSlider, compSlider].forEach { ValueChanged($0) }
         
@@ -93,21 +96,34 @@ class SecondViewController: UIViewController {
         }
     }
     
+    func recordingURL() -> URL {
+        let docDirPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return docDirPath.appendingPathComponent("Recorded.wav")
+    }
+    
     @IBAction func startRecording(_ sender: UIButton){
-        print("Recording")
+        csound.record(to: recordingURL())
+        statusLabel.text = String("Recording...")
     }
     
     @IBAction func stopRecording(_ sender: UIButton){
-        print("Stop")
+        csound.stopRecording()
+        do {
+            Player = try AVAudioPlayer(contentsOf: recordingURL())
+        } catch {
+            print(error.localizedDescription)
+            }
+        
+        Recorded = true
+        statusLabel.text = String("Recording stopped")
         }
     
     @IBAction func Playback(_ sender: UIButton){
-        print("Playback")
-    }
-    
-    func recordingURL() -> URL {
-        let docDirPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        return docDirPath.appendingPathComponent("recording.wav")
+        if Recorded {
+            Player.prepareToPlay()
+            Player.play()
+        }
+        statusLabel.text = String("Playing back")
     }
 }
 
