@@ -11,7 +11,7 @@ nchnls    = 2
 0dbfs	  = 1.0
 
 garvb        init        0
-garvb1       init       0
+garvb1      init        0
 
 instr 1
 
@@ -42,13 +42,18 @@ endin
 
 instr 2
 kgain chnget "gain"
+kcomp chnget "comp"
+
 asig2, asig3 ins
 a2 = asig2*kgain
 a3 = asig3*kgain
 
-a2 += garvb1
-a3 += garvb1
-outs a2, a3
+acomp compress a2, a3, 0, 40, 60, 3, 0.1, .5, .92
+
+garvb1 += a2
+garvb1 += a3
+
+outs a2 + acomp*kcomp, a3 + acomp*kcomp
 endin
 
 
@@ -59,7 +64,6 @@ arL, arR    reverbsc    garvb, garvb, kfb, 10000
 outs        arL*.3, arR*.3
 clear   garvb
 endin
-
 
 
 instr 101
@@ -77,5 +81,3 @@ endin
 
 </CsScore>
 </CsoundSynthesizer>
-
-

@@ -16,7 +16,6 @@
 		782F3ADB2187537B001010F3 /* CsoundiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782F3ADA2187537B001010F3 /* CsoundiOS.framework */; };
 		78AADA9C21879665007AF666 /* VocalHarmonizer.csd in Resources */ = {isa = PBXBuildFile; fileRef = 78AADA9B21879665007AF666 /* VocalHarmonizer.csd */; };
 		78AADAA021879DC7007AF666 /* SharedInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AADA9F21879DC7007AF666 /* SharedInstances.swift */; };
-		78D607802188C0FB00ECDCAB /* WAVs in Resources */ = {isa = PBXBuildFile; fileRef = 78D6077F2188C0FB00ECDCAB /* WAVs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		782F3ADA2187537B001010F3 /* CsoundiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CsoundiOS.framework; sourceTree = "<group>"; };
 		78AADA9B21879665007AF666 /* VocalHarmonizer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VocalHarmonizer.csd; sourceTree = "<group>"; };
 		78AADA9F21879DC7007AF666 /* SharedInstances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedInstances.swift; sourceTree = "<group>"; };
-		78D6077F2188C0FB00ECDCAB /* WAVs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WAVs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				782F3AC521875349001010F3 /* AppDelegate.swift */,
 				782F3AC721875349001010F3 /* FirstViewController.swift */,
 				782F3AC921875349001010F3 /* SecondViewController.swift */,
-				78D6077F2188C0FB00ECDCAB /* WAVs */,
 				78AADA9B21879665007AF666 /* VocalHarmonizer.csd */,
 				78AADA9F21879DC7007AF666 /* SharedInstances.swift */,
 				782F3ACB21875349001010F3 /* Main.storyboard */,
@@ -139,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				782F3AD221875349001010F3 /* LaunchScreen.storyboard in Resources */,
-				78D607802188C0FB00ECDCAB /* WAVs in Resources */,
 				782F3ACF21875349001010F3 /* Assets.xcassets in Resources */,
 				782F3ACD21875349001010F3 /* Main.storyboard in Resources */,
 				78AADA9C21879665007AF666 /* VocalHarmonizer.csd in Resources */,

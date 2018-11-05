@@ -61,7 +61,7 @@ class FirstViewController: UIViewController {
 
         VolumeSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
         
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.black
     }
     
     override func viewDidAppear(_ animated: Bool){
@@ -70,12 +70,12 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func OnOff(_ sender:UISwitch){
-        if VSlider.isOn == false{
-            csound.sendScore("i-1 0 1")
-            csound.sendScore("i-100 0 1")
-        }else{
+        if VSlider.isOn == true{
             csound.sendScore("i1 0.1 -1")
             csound.sendScore("i100 0 -1")
+        }else{
+            csound.sendScore("i-1 0 1")
+            csound.sendScore("i-100 0 1")
         }
     }
     
@@ -110,7 +110,7 @@ extension FirstViewController: CsoundBinding {
         disPtr = csoundObj.getInputChannelPtr("distortion", channelType: CSOUND_CONTROL_CHANNEL)
         filtPtr = csoundObj.getInputChannelPtr("ratio", channelType: CSOUND_CONTROL_CHANNEL)
     }
-    
+
     func updateValuesToCsound() {
         verbPtr?.pointee = verb
         harPtr?.pointee = harmony

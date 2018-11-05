@@ -8,6 +8,7 @@
 
 import UIKit
 import CsoundiOS
+import AVFoundation
 
 class SecondViewController: UIViewController {
 
@@ -22,18 +23,26 @@ class SecondViewController: UIViewController {
     
     @IBOutlet var OnOffSwitch: UISwitch!
     
+    //Buttons
+    @IBOutlet var RecordButton: UIButton!
+    @IBOutlet var PlayButton: UIButton!
+    @IBOutlet var StopButton: UIButton!
+    
     //Pointers
     var reverbPtr: UnsafeMutablePointer<Float>?
     var levelPtr: UnsafeMutablePointer<Float>?
+    var compPtr: UnsafeMutablePointer<Float>?
     
     var reverb: Float = 0
     var level: Float = 0
+    var comp: Float = 0
     
     let csound = SharedInstances.csound
     var csoundUI: CsoundUI!
     
-    var verb: Float = 0
-    var volume: Float = 0
+    //Declarations
+    var Recorded = false
+    var Player = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +56,7 @@ class SecondViewController: UIViewController {
         
         csound.play(Bundle.main.path(forResource:"VocalHarmonizer", ofType: "csd"))
         
-        
-        [volumeSlider, reverbSlider].forEach { ValueChanged($0) }
+        [volumeSlider, reverbSlider, compSlider].forEach { ValueChanged($0) }
         
         volumeSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
         reverbSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
@@ -61,22 +69,45 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func OnOff1(_ sender: UISwitch){
-        if OnOffSwitch.isOn == false {
-            csound.sendScore("i-2 0 1")
-            csound.sendScore("i-101 0 1")
-        }else{
+        if OnOffSwitch.isOn == true {
             csound.sendScore("i2 0 -1")
             csound.sendScore("i101 0 -1")
+        }else{
+            csound.sendScore("i-2 0 1")
+            csound.sendScore("i-101 0 1")
         }
     }
     
+    lazy var sliderToLabel1: [UISlider: UILabel] = [reverbSlider: verbValue, volumeSlider: volValue, compSlider: compValue]
+    
     @IBAction func ValueChanged(_ sender: UISlider){
+        if let label = sliderToLabel1[sender] {
+            label.text = String(format: "%.2f", sender.value)
+        }
         switch sender{
         case volumeSlider: level = sender.value
         case reverbSlider: reverb = sender.value
+        case compSlider: comp = sender.value
         default:
             break
         }
+    }
+    
+    @IBAction func startRecording(_ sender: UIButton){
+        print("Recording")
+    }
+    
+    @IBAction func stopRecording(_ sender: UIButton){
+        print("Stop")
+        }
+    
+    @IBAction func Playback(_ sender: UIButton){
+        print("Playback")
+    }
+    
+    func recordingURL() -> URL {
+        let docDirPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return docDirPath.appendingPathComponent("recording.wav")
     }
 }
 
@@ -84,11 +115,13 @@ extension SecondViewController: CsoundBinding{
     func setup(_ csoundObj: CsoundObj) {
         reverbPtr = csoundObj.getInputChannelPtr("reverb1", channelType: CSOUND_CONTROL_CHANNEL)
         levelPtr = csoundObj.getInputChannelPtr("gain", channelType: CSOUND_CONTROL_CHANNEL)
+        compPtr = csoundObj.getInputChannelPtr("comp", channelType: CSOUND_CONTROL_CHANNEL)
     }
     
     func updateValuesToCsound() {
         reverbPtr?.pointee = reverb
         levelPtr?.pointee = level
+        compPtr?.pointee = comp
     }
 }
 
